@@ -249,19 +249,46 @@ if (isNaN(x)){
 // Expected output: "Variabel halo bukan sebuah number"
 
 /* 2. built in function parseInt() digunakan untuk mengubah
-variabel staring menjadi number, jika ada nilai selain number
+variabel string menjadi number, jika ada nilai selain number
 maka hasilnya akan diambil yang number saja. contoh
 */
 x = "110 KG"
-const y = parseInt(x)
+let y = parseInt(x)
 console.log(y) 
 // Expected output: 110
 
-/* 2. built in function parseInt() digunakan untuk mengubah
-variabel staring menjadi number, jika ada nilai selain number
-maka hasilnya akan diambil yang number saja. contoh
+/* 3. built in function parseFloat() digunakan untuk mengubah
+variabel string menjadi float, jika ada nilai selain number
+dan atau berbentuk float (.), maka akan dihilangkan contoh
 */
-x = "110 KG"
-const y = parseInt(x)
+x = "12.67 KM"
+y = parseFloat(x)
 console.log(y) 
-// Expected output: 110
+// Expected output: 12.67
+
+/* 4. built in function eval() digunakan untuk mengevaluasi 
+kode JavaScript yang direpresentasikan sebagai string dan 
+mengembalikan nilai penyelesaiannya menjadi sebuah number. 
+contoh
+*/
+console.log(eval("2 + 6")) 
+// Expected output: 8
+
+/* 5. built in function eval() digunakan untuk menentukan 
+apakah suatu nilai terbatas, pertama-tama mengubah nilai 
+tersebut menjadi angka jika perlu. Angka terbatas 
+adalah angka yang bukan NaN atau ± Infinity.  
+contoh
+*/
+function div(x) {
+  if (isFinite(1000 / x)) {
+    return "Number is NOT Infinity.";
+  }
+  return "Number is Infinity!";
+}
+
+console.log(div(0));
+// Expected output: "Number is Infinity!""
+
+console.log(div(1));
+// Expected output: "Number is NOT Infinity."
