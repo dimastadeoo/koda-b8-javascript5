@@ -177,12 +177,91 @@ array = [1,5,6,8,9];
 console.log(array.map((x) => x * 2))
 // Expected output: Array [2, 10, 12, 16, 18 ]
 
-/*16. built in method map() ini untuk membuat array baru 
-yang diisi dengan hasil pemanggilan fungsi yang diberikan 
-proses pada setiap elemen dalam array tersebut
+/*16. built in method pop() untuk menghapus elemen terakhir 
+dari sebuah array dan mengembalikan elemen tersebut. 
+Metode ini mengubah panjang array.
 contoh
 */
 array = [1,5,6,8,9];
+array.pop()
+console.log(array)
+// Expected output: Array [ 1, 5, 6, 8 ]
 
-console.log(array.map((x) => x * 2))
-// Expected output: Array [2, 10, 12, 16, 18 ]
+/*17. built in method push() untuk menambahkan elemen yang 
+ditentukan ke akhir array dan mengembalikan panjang array 
+yang baru.
+contoh
+*/
+array = [1,5,6,8,9];
+array.push(90)
+console.log(array)
+// Expected output: Array [ 1, 5, 6, 8, 9, 90 ]
+
+/*18. built in method shift() untuk menghapus elemen pertama 
+dari sebuah array dan mengembalikan elemen yang dihapus tersebut.
+Metode ini mengubah panjang array.
+contoh
+*/
+array = [1,5,6,8,9];
+console.log(array.shift())
+// Expected output 1
+console.log(array)
+// Expected output: Array [ 5, 6, 8, 9 ]
+
+/*19. built in method some() akan mengembalikan nilai true jika
+menemukan elemen dalam array yang memenuhi kondisi yang diberikan.
+Jika tidak, ia akan mengembalikan nilai false.
+contoh
+*/
+array = [1,5,6,8,9];
+// Checks whether an element is even
+const even = (element) => element % 2 === 0;
+
+console.log(array.some(even));
+// Expected output: true
+
+/*20. built in method sort() akan mengurutkan huruf pertama 
+pada setiap elemen dalam sebuah array dan mengembalikan nilai
+array yang sudah diurutkan. defaultnya diurutkan secara ascending.
+contoh
+*/
+const months = ["March", "Jan", "Feb", "Dec"];
+months.sort();
+console.log(months);
+// Expected output: Array ["Dec", "Feb", "Jan", "March"]
+
+array = [1, 30, 4, 21, 100000];
+array.sort();
+console.log(array);
+// Expected output: Array [1, 100000, 21, 30, 4]
+
+/* built in function 
+1. built in function isNaN() digunakan untuk cek kondisi apakah
+variabel bukan sebuah number, ini akan mengembalikan nilai
+true atau false contoh
+*/
+let x = "halo"
+if (isNaN(x)){
+    console.log(`Variabel ${x}`, "Bukan sebuah number")
+}else {
+    console.log(`Variabel ${x}`, "adalah sebuah number")
+}
+// Expected output: "Variabel halo bukan sebuah number"
+
+/* 2. built in function parseInt() digunakan untuk mengubah
+variabel staring menjadi number, jika ada nilai selain number
+maka hasilnya akan diambil yang number saja. contoh
+*/
+x = "110 KG"
+const y = parseInt(x)
+console.log(y) 
+// Expected output: 110
+
+/* 2. built in function parseInt() digunakan untuk mengubah
+variabel staring menjadi number, jika ada nilai selain number
+maka hasilnya akan diambil yang number saja. contoh
+*/
+x = "110 KG"
+const y = parseInt(x)
+console.log(y) 
+// Expected output: 110
