@@ -13,7 +13,7 @@ let prima =[]
 let x= 0
 while (x < bil.length){
     if (isPrime(bil[x])){
-        prima = [...bil]
+        prima = [...prima, bil[x]]
     }
     x++
 }
